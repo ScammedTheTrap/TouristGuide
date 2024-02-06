@@ -6,6 +6,7 @@ import com.example.touristguideapi.repository.TouristRepository;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @Service
 public class TouristService {
@@ -15,8 +16,6 @@ public class TouristService {
     public TouristService(TouristRepository touristRepository) {
         this.touristRepository = touristRepository;
     }
-
-
 
     public List<TouristAttraction> getAllAttractions() {
         return touristRepository.findAllAttractions();
@@ -38,6 +37,12 @@ public class TouristService {
             throw new NoSuchElementException("TouristAttraction with name " + name + " not found");
         }
         return updated;
+    }
+
+    public Optional<TouristAttraction> findAttractionByName(String name) {
+        return touristRepository.findAllAttractions().stream()
+                .filter(attraction -> attraction.getName().equalsIgnoreCase(name))
+                .findFirst();
     }
 
 

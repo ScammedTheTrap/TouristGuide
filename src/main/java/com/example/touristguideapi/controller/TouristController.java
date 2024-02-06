@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import com.example.touristguideapi.service.TouristService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/attractions")
@@ -24,10 +25,6 @@ public class TouristController {
         return new ResponseEntity<>(touristService.getAllAttractions(),HttpStatus.OK);
     }
 
-    @GetMapping("/hello")
-    public ResponseEntity<String> sayHello() {
-        return new ResponseEntity<>("Hello",HttpStatus.OK);
-    }
 
     @GetMapping("/test")
     public ResponseEntity<List<TouristAttraction>> getAllAttractions() {
@@ -36,9 +33,15 @@ public class TouristController {
     }
 
     @GetMapping("/{name}")
-    public ResponseEntity<List<TouristAttraction>> getAttractionByName(@PathVariable String name) {
-        return ResponseEntity.ok(touristService.findAllAttractions());
+    public ResponseEntity<TouristAttraction> getAttractionByName(@PathVariable String name) {
+        Optional<TouristAttraction> attraction = touristService.findAttractionByName(name);
+        if (attraction.isPresent()) {
+            return ResponseEntity.ok(attraction.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
+
 
     @PostMapping("/add")
     public ResponseEntity<TouristAttraction> addAttraction(@RequestBody TouristAttraction touristAttraction) {
