@@ -1,29 +1,36 @@
-package service;
+package com.example.touristguideapi.service;
 
-import model.TouristAttraction;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.touristguideapi.model.TouristAttraction;
 import org.springframework.stereotype.Service;
-import repository.TouristRepository;
+import com.example.touristguideapi.repository.TouristRepository;
 
 import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
 public class TouristService {
+    private final TouristRepository touristRepository;
 
-   TouristRepository touristRepository = new TouristRepository();
+
+    public TouristService(TouristRepository touristRepository) {
+        this.touristRepository = touristRepository;
+    }
+
+
 
     public List<TouristAttraction> getAllAttractions() {
-        return touristRepository.findAllTourists();
+        return touristRepository.findAllAttractions();
     }
 
     public TouristAttraction createAttraction(TouristAttraction touristAttraction) {
         return touristRepository.save(touristAttraction);
     }
 
-    public void deleteAttraction(String name) {
+    public boolean deleteAttraction(String name) {
         touristRepository.delete(name);
+        return false;
     }
+
 
     public TouristAttraction updateAttraction(String name, TouristAttraction updatedAttraction) {
         TouristAttraction updated = touristRepository.update(name, updatedAttraction);
@@ -31,5 +38,10 @@ public class TouristService {
             throw new NoSuchElementException("TouristAttraction with name " + name + " not found");
         }
         return updated;
+    }
+
+
+    public List<TouristAttraction> findAllAttractions() {
+        return touristRepository.findAllAttractions();
     }
 }

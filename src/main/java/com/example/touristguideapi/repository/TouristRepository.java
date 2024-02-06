@@ -1,7 +1,7 @@
-package repository;
+package com.example.touristguideapi.repository;
 
 
-import model.TouristAttraction;
+import com.example.touristguideapi.model.TouristAttraction;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -9,18 +9,18 @@ import java.util.List;
 
 @Repository
 public class TouristRepository {
+    private List<TouristAttraction> touristAttractions;
 
-
-    private List<TouristAttraction> touristAttractions = new ArrayList<>(
-            List.of(
-                    new TouristAttraction("The Little Mermaid", "The little mermaid attraction."),
-                    new TouristAttraction("Møns Klint", "A beautiful view from the Danish coast."),
-                    new TouristAttraction("Tivoli", "A historic attraction for kids and adults.")
-            ));
+    public TouristRepository(){
+        this.touristAttractions = new ArrayList<>();
+        touristAttractions.add(new TouristAttraction("The Little Mermaid", "The little mermaid attraction."));
+        touristAttractions.add(new TouristAttraction("Møns Klint", "A beautiful view from the Danish coast."));
+        touristAttractions.add(new TouristAttraction("Tivoli", "A historic attraction for kids and adults."));
+    }
 
     //CRUD metoder
-    public List<TouristAttraction> findAllTourists(){
-                return new ArrayList<>(touristAttractions);
+    public List<TouristAttraction> findAllAttractions(){
+                return touristAttractions;
     }
 
 
