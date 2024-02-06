@@ -1,13 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome to a touristguide of Denmark's attractions.</title>
+    <title>Tourist Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .header, .footer {
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #000;
+        }
+        footer {
+            margin-top: auto;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
-
-
-
 <body>
+<div class="header">
+    <h1>Vejledning til Turistattraktioner</h1>
+</div>
 
+<nav>
+    <ul>
+        <li><a href="/">Hjem</a></li>
+        <li><a href="/attractions">Se Attraktioner</a></li>
+        <li><a href="/attractions/add">Tilføj Attraktion</a></li>
+        <li><a href="/attractions/update">Opdater Attraktion</a></li>
+        <li><a href="/attractions/delete">Slet Attraktion</a></li>
+    </ul>
+</nav>
+
+<div class="content">
+    <p>Dette er en guide til de mest populære turistattraktioner.</p>
+    <ul>
+        <li><a href="https://eksempel.com/lillehavfrue">Den Lille Havfrue</a></li>
+        <li><a href="https://eksempel.com/moensklint">Møns Klint</a></li>
+        <li><a href="https://eksempel.com/tivoli">Tivoli</a></li>
+    </ul>
+    <img src="path_to_your_image.jpg" alt="Turist Information">
+</div>
+
+<div class="footer">
+    <p>Kontakt os på email@example.com</p>
+</div>
 </body>
 </html>
