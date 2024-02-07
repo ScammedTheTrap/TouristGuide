@@ -2,73 +2,35 @@
 <html lang="da">
 <head>
     <meta charset="UTF-8">
-    <title>Tourist Guide</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-        }
-        .header, .footer {
-            background-color: #f2f2f2;
-            padding: 10px;
-            text-align: center;
-        }
-        .content {
-            flex: 1;
-            padding: 20px;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin-right: 10px;
-        }
-        nav a {
-            text-decoration: none;
-            color: #000;
-        }
-        footer {
-            margin-top: auto;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-    </style>
+    <link rel="stylesheet" href="touristwebsite.css">
+    <title>Tourist guide</title>
 </head>
 <body>
-<div class="header">
-    <h1>Vejledning til Turistattraktioner</h1>
-</div>
+<header>
+    <h1>A danish tourism guide</h1>
+</header>
 
 <nav>
     <ul>
-        <li><a href="/">Hjem</a></li>
-        <li><a href="/attractions">Se Attraktioner</a></li>
-        <li><a href="/attractions/add">Tilføj Attraktion</a></li>
-        <li><a href="/attractions/update">Opdater Attraktion</a></li>
-        <li><a href="/attractions/delete">Slet Attraktion</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/attractions">See Attractions</a></li>
+        <li><a href="/attractions/add">Attraction History</a></li>
+        <li><a href="/attractions/update">About us</a></li>
     </ul>
 </nav>
 
-<div class="content">
-    <p>This is a simple guide to a few famous attractions.</p>
+<main>
+    <p>This is a basic guide about various attractions in Denmark.</p>
     <ul>
         <li><a href="https://eksempel.com/lillehavfrue">Den Lille Havfrue</a></li>
         <li><a href="https://eksempel.com/moensklint">Møns Klint</a></li>
         <li><a href="https://eksempel.com/tivoli">Tivoli</a></li>
     </ul>
-    <img src="path_to_your_image.jpg" alt="Turist Information">
-</div>
+    <img src="https://d27k8xmh3cuzik.cloudfront.net/wp-content/uploads/2018/07/FotoJet20378hwdfbwd.jpg" alt="Denmark attraction">
+</main>
 
-<div class="footer">
-    <p>Kontakt os på email@example.com</p>
-</div>
+<footer>
+    <p>Contact us on danish-tourism@hotmail.com</p>
+</footer>
 </body>
 </html>

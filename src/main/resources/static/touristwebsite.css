@@ -1,0 +1,93 @@
+/* touristwebsite.css */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-image: url('https://d27k8xmh3cuzik.cloudfront.net/wp-content/uploads/2018/07/FotoJet20378hwdfbwd.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header, nav, footer {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    padding: 1em;
+}
+
+header {
+    text-align: center;
+    padding-bottom: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+nav ul li {
+    float: left;
+    border-right: 1px solid #bbb; /* Adds a border between menu items */
+}
+
+nav ul li:last-child {
+    border-right: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #0056b3; /* A shade of blue */
+    padding: 0.5em 1em;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+main {
+    padding: 1em;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    margin: 1em;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* A subtle shadow */
+}
+
+main ul {
+    padding: 0;
+    list-style: none;
+}
+
+main ul li {
+    background-color: #f2f2f2; /* Light grey background */
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border-radius: 4px; /* Rounded corners */
+}
+
+main ul li a {
+    color: #0056b3; /* A shade of blue */
+    text-decoration: none;
+}
+
+main ul li a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 0.5em;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    padding: 1em 0;
+}
